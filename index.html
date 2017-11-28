@@ -7,6 +7,20 @@
   <title>My bookmarklets</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  .footer {
+    padding: 2.0em;
+  }
+  .fix-footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    overflow:hidden;
+  }
+  .fa-heart {
+    color: rgb(228, 88, 100);
+  }
+  </style>
   </head>
 <body>
   <section class="section">
@@ -15,20 +29,23 @@
         My bookmarklets
       </h1>
       <p class="subtitle is-6">
-        Some bookmarklets that I made to make life easier. <i class="fa fa-magic" aria-hidden="true"></i>
+        The bookmarklets that makes my life easier. <i class="fa fa-magic" aria-hidden="true"></i>
       </p>
       <table class="table is-striped">
         <thead>
           <tr>
+            <th></th>
             <th>Desc</th>
+            <th>Usage</th>
             <th>Link</th>
             <th>Source</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              Generate the MR redirect HTML for Bugzilla</td>
+            <th><i class="fa fa-briefcase" aria-hidden="true"></i></th>
+            <td>Generate the MR redirect HTML for Bugzilla</td>
+            <td>Click this bookmarklet on gitlab merge request page</td>
             <td><a class="button is-success is-small" href="javascript:(function()%7B(function(doc)%20%7Bconst%20location%20%3D%20doc.location.href%3Bconst%20paths%20%3D%20location.split('%2F')%3Bconst%20length%20%3D%20paths.length%3Bconst%20mr%20%3D%20paths%5Blength%20-%201%5D%2C%20app%20%3D%20paths%5Blength%20-%203%5D%3Bconst%20html%20%3D%20%60%3Chtml%3E%3Chead%3E%3Ctitle%3ERedirect%20to%20%24%7Bapp%7D%20MR%20%23%24%7Bmr%7D%3C%2Ftitle%3E%3Cmeta%20http-equiv%3D%22refresh%22%20content%3D%221%3B%20url%3D%24%7Blocation%7D%22%20%2F%3E%3C%2Fhead%3E%3Cbody%3ERedirect%20to%20%24%7Bapp%7D%20MR%20%23%24%7Bmr%7D%3C%2Fbody%3E%3C%2Fhtml%3E%60%3Bconst%20textArea%20%3D%20doc.createElement('textarea')%3BtextArea.style.position%20%3D%20'fixed'%3BtextArea.style.top%20%3D%200%3BtextArea.style.left%20%3D%200%3BtextArea.style.width%20%3D%20'1em'%3BtextArea.style.height%20%3D%20'1em'%3BtextArea.style.padding%20%3D%200%3BtextArea.style.border%20%3D%20'none'%3BtextArea.style.outline%20%3D%20'none'%3BtextArea.style.boxShadow%20%3D%20'none'%3BtextArea.style.background%20%3D%20'transparent'%3BtextArea.value%20%3D%20html%3Bdoc.body.appendChild(textArea)%3BtextArea.select()%3Btry%20%7Bif%20(doc.execCommand('copy'))%20%7Balert('Copy%20successfully!')%3B%7D%7D%20catch%20(err)%20%7Balert('Oops%2C%20unable%20to%20copy.')%3B%7Ddoc.body.removeChild(textArea)%3B%7D)(document)%7D)()">B</a></td>
             <td><a href="https://github.com/jeanpan/bookmarklets/blob/gh-pages/src/gen-mr-redirect.js"><i class="fa fa-link" aria-hidden="true"></i></a></td>
           </tr>
@@ -36,5 +53,12 @@
       </table>
     </div>
   </section>
+  <footer class="footer fix-footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>Made by <a href="https://github.com/jeanpan" target="_blank">@jeanpan</a> with <i class="fa fa-heart" aria-hidden="true"></i>.</p>
+        </div>
+      </div>
+    </footer>  
 </body>
 </html>
